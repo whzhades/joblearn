@@ -16,7 +16,7 @@ class ExcelController extends Controller
 {
     public function export(){
 
-        $a = '42';
+/*        $a = '42';
         $b = 42;
         date_default_timezone_set('Asia/Shanghai');
         $t = time();
@@ -27,13 +27,13 @@ class ExcelController extends Controller
         $t3 = date('y-m-d h-i-s',$t);
         echo "<br/>";
         echo $t3;
-        exit;
+
 if( $a != $b ) {
     echo '111';
 }else{
     echo 222;
-}
-exit();
+}*/
+
 
         $cellData = [
             ['学号','姓名','成绩'],
@@ -45,9 +45,9 @@ exit();
         ];
         Excel::create('学生成绩',function($excel) use ($cellData){
             $excel->sheet('score', function($sheet) use ($cellData){
-                for($i = 0; $i < count($cellData); $i++) {
+              for($i = 0; $i < count($cellData); $i++) {
                     $row = $i + 1;
-                    /*$rowdata = $cellData[$i];
+                  /*    $rowdata = $cellData[$i];
                     $sheet->cell('A' . $row, function($cell) use ($rowdata) {
                         $cell->setValue($rowdata[0]);
                     });

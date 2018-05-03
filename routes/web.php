@@ -22,5 +22,6 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function () {
     Route::get('sql','LoginController@ormtest');
     Route::get('/','IndexController@index');
     Route::get('test','LoginController@test');
-
 });
+Route::get('excel','ExcelController@export');
+Route::get('form','FormController@test');
